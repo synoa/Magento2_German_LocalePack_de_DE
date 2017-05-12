@@ -1,27 +1,38 @@
-# Magento 2 German LocalePack de_DE
+# German Translations for Magento 2
+> This Language Pack is forked from [splendidinternet/Magento2_German_LocalePack_de_DE](https://github.com/splendidinternet/Magento2_German_LocalePack_de_DE), and extended as needed for our usage.
 
-Deutsches Sprachpaket für Magento 2 Community Edition
+You can read all about using this package in German over at [splendidinternet/Magento2_German_LocalePack_de_DE](https://github.com/splendidinternet/Magento2_German_LocalePack_de_DE).
 
-Die Übersetzung wurde von deutschen Muttersprachlern nach eigenem Ermessen vorgenommen. Die Übersetzung ist komplett, d.h. alle Sprachausgaben von Magento 2 wurden vom Englischen ins Deutsche übersetzt. Gern können Änderungsvorschläge eingebracht oder auch das gesamte Repository geforkt werden, wenn abweichende Übersetzungen eingebracht werden sollen.
+Originally translated by native speakers this language pack is a full translation of Magento 2 - Front & Back. To provide an easy way to meet our ("Synoa GmbH") needs for additional translations and to provide a consistend location for the translations the original project was forked.
 
-Es gibt hier https://crowdin.com/project/magento-2/de auch einen Ansatz für die deutsche Übersetzung, aber das ist noch nicht weit fortgeschritten. 
-Und für Magento 1.x gibt es weiterhin das deutsche Sprachpaket von Rico Neitzel: https://github.com/riconeitzel/German_LocalePack_de_DE
+## Installation
 
-# Installation
- - Alle Dateien nach `/app/i18n/splendid/de_DE/` kopieren
+### Manual Installation
+Copy all files to `/app/i18n/synoa/de_DE/`. Then go into the Magento root directory, e.g. `/var/www/` and remove the pre-existing `js-translation.json` file, then deploy the static content for the `de_DE` language, run the upgrade command, remove `var/di` directory and finally regenerate it by running `bin/magento setup:di:deploy`.
 
-Aus dem Magento-Root-Verzeichnis folgende Befehle aufrufen:
 ```bash
-rm pub/static/frontend/Magento/luma/de_DE/js-translation.json
+rm pub/static/frontend/Magento/{theme}/de_DE/js-translation.json
 php bin/magento setup:static-content:deploy de_DE
 php bin/magento setup:upgrade
 rm -rf var/di
 php bin/magento setup:di:compile
 ```
+_Note: replace {theme} with the theme currenlty in usage_
 
-# Installation mit Composer
+### Installation with Composer
+
 ```bash
-composer require splendidinternet/mage2-locale-de-de
-rm pub/static/frontend/Magento/luma/de_DE/js-translation.json
+composer require synoa/mage2-locale-de-de
+rm pub/static/frontend/Magento/{theme}/de_DE/js-translation.json
 php bin/magento setup:static-content:deploy de_DE
 ```
+_Note: replace {theme} with the theme currenlty in usage_
+
+
+---
+
+## Credit
+
+This repository is a fork of [splendidinternet/Magento2_German_LocalePack_de_DE](https://github.com/splendidinternet/Magento2_German_LocalePack_de_DE). The majority of translation work was done by [splendidinternet](https://github.com/splendidinternet/) as well as [a bunch of contributors](https://github.com/splendidinternet/Magento2_German_LocalePack_de_DE/graphs/contributors).
+
+In compliance with the original license ([See LICENSE.txt](https://github.com/splendidinternet/Magento2_German_LocalePack_de_DE/blob/master/LICENSE.txt)) this modified version is distributed under the same Open Source License (Open Software License ("OSL") v. 3.0). You are free to fork, redistribute and build upon the work done by Synoa GmbH, however there is no warranty whatsoever. See [LICENSE.txt](https://github.com/synoa/Magento2_German_LocalePack_de_DE/blob/master/LICENSE.txt).
